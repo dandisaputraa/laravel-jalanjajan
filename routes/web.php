@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +16,7 @@ use App\Http\Controllers\ProductController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('landing');
 });
 
 
@@ -26,3 +27,8 @@ Route::post('/products/create', [ProductController::class, 'store']);
 Route::get('/products/{id}/edit', [ProductController::class, 'edit']);
 Route::put('/products/{id}/edit', [ProductController::class, 'update']);
 Route::delete('/products/{id}', [ProductController::class, 'delete']);
+
+// login
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);

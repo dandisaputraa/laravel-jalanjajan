@@ -39,8 +39,9 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
             </ul>
-            <form class="d-flex ms-auto">
-                <a role="button" class="btn btn-light me-2" type="button" href="#"><i class="fa-solid fa-right-from-bracket"></i></i>Logout</a>
+            <form action="/logout" method="post" class="d-flex ms-auto">
+                @csrf
+                <button role="button" class="btn btn-light me-2" type="submit" href="#"><i class="fa-solid fa-right-from-bracket"></i></i>Logout</button>
             </form>
             </div>
         </div>
