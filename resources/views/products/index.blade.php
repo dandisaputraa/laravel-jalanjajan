@@ -16,8 +16,8 @@
                             <a href="{{ url('/products/create') }}" class="btn btn-primary float-end">Add Data</a>
                         </h4>
                     </div>
-                    <div class="card-body">
-                        <table class="table table-bordered table-striped">
+                    <div class="card-body me-5">
+                        <table class="table table-bordered table-striped text-center">
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -35,7 +35,7 @@
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $data->product_name }}</td>
-                                        <td>Rp.{{ $data->product_price }}</td>
+                                        <td>@currency($data->product_price)</td>
                                         <td>{{ $data->product_qty }}</td>
                                         <td><img width="100px" src="{{ asset('storage/' . $data->product_image) }}" alt=""></td>
                                         <td>{{ $data->product_code }}</td>

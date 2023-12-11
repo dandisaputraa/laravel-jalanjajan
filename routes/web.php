@@ -1,8 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\KulinerController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\DestinasiController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +35,7 @@ Route::delete('/products/{id}', [ProductController::class, 'delete']);
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
+
+//Kuliner
+Route::get('/kuliner', [KulinerController::class, 'index']);
+Route::get('/destinasi', [DestinasiController::class, 'index']);

@@ -12,7 +12,7 @@
     <title>JalanJajan</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <link rel="stylesheet" href="gaya2.css">
+    <link rel="stylesheet" href="css/gaya2.css">
 
     <!-- Font -->
     <!-- <link href="https://fonts.googleapis.com/css2?family=Viga&display=swap" rel="stylesheet"> -->
@@ -41,7 +41,7 @@
             </ul>
             <form action="/logout" method="post" class="d-flex ms-auto">
                 @csrf
-                <button role="button" class="btn btn-light me-2" type="submit" href="#"><i class="fa-solid fa-right-from-bracket"></i></i>Logout</button>
+                <button role="button" class="btn btn-light me-2" type="submit"><i class="fa-solid fa-right-from-bracket"></i></i>Logout</button>
             </form>
             </div>
         </div>
