@@ -8,8 +8,10 @@ use App\Models\ProductModel;
 class KulinerController extends Controller
 {
     public function index(){
+
         return view('kuliner',[
-            'products' => ProductModel::all()
+            'products' => ProductModel::latest()->get()
         ]);
     }
+
 }

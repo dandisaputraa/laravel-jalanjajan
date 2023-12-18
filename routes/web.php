@@ -1,10 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\KulinerController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\DestinasiController;
+
 
 
 /*
@@ -36,6 +39,17 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
-//Kuliner
+//Kuliner & destinasi
 Route::get('/kuliner', [KulinerController::class, 'index']);
 Route::get('/destinasi', [DestinasiController::class, 'index']);
+
+//cart
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+Route::post('/addToCart/{id}', [CartController::class, 'addToCart'])->name('addToCart');
+Route::post('/update-quantity', [CartController::class, 'updateQuantity'])->name('cart.update.quantity');
+Route::get('/remove-item/{id}', [CartController::class, 'removeItem'])->name('cart.remove.item');
+Route::get('/clear-cart', [CartController::class, 'clearCart'])->name('cart.clear');
+
+// Checkout
+Route::get('/order', [OrderController::class, 'showOrderForm'])->name('order.form');
+Route::post('/order', [OrderController::class, 'placeOrder'])->name('order.place');
