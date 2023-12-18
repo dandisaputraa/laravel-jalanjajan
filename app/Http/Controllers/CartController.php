@@ -29,7 +29,7 @@ class CartController extends Controller
             $validatedData['total_price'] = $produk->product_price * $request->qty ; // Nilai default jika tidak ada inputan
         }
         if ($produk->product_qty < $request->qty ) {
-            return redirect()->back()->with('error', 'Maaf, Stok Obat tidak mencukupi!');
+            return redirect()->back()->with('error', 'Maaf, Stok tidak mencukupi!');
         
         } else if ( $request->qty <= 0 ){
             return redirect()->back()->with('error', 'Format Salah!');
